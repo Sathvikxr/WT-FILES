@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Example</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>My Canvas</h1>
+    <canvas id="myCanvas" width="500" height="400">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+        // Get the canvas element and its context
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        // Set fill color and draw a rectangle
+        context.fillStyle = 'red';
+        context.fillRect(50, 50, 150, 100);
+
+        // Draw a line
+        context.beginPath();
+        context.moveTo(50, 200);
+        context.lineTo(200, 200);
+        context.stroke();
+
+        // Draw an arc (circle segment)
+        context.beginPath();
+        context.arc(300, 150, 50, 0, 2 * Math.PI); // Full circle
+        context.stroke();
+    </script>
+</body>
+
+</html>
